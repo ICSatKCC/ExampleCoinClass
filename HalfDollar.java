@@ -8,4 +8,9 @@ public class HalfDollar extends Coin {
   public HalfDollar(){
     super(.50,"halfdollar");
   }
+  
+    //required by Coin abstract class
+  public String getBack(){
+    return "presidential seal";
+  }
 }

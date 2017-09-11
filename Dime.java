@@ -8,4 +8,8 @@ public class Dime extends Coin {
   public Dime(){
     super(.10,"dime");
   }
+  //required by Coin abstract class
+  public String getBack(){
+    return "torch";
+  }
 }

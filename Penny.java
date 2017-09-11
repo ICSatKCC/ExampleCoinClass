@@ -12,4 +12,10 @@ public class Penny extends Coin {
   public String getColor () {
     return "Copper";
   }
+  
+  //required by Coin abstract class
+  public String getBack(){
+    return "shield";
+  }
+
 }

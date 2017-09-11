@@ -12,4 +12,9 @@ public class DollarCoin extends Coin {
   public String getColor () {
     return "gold";
   }
+  
+    //required by Coin abstract class
+  public String getBack(){
+    return "eagle";
+  }
 }

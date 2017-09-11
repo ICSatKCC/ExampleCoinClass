@@ -1,11 +1,11 @@
 import java.util.Random;
 /**
-* Flippable Coin super class.
+* Flippable Money Coin abstract super class.
 * @author Lisa Miller
 * @since 9/9/2017
 */
 
-public class Coin implements Flippable {
+public abstract class Coin implements Flippable, Money {
   //instance variables
   private double value;
   private String name;
@@ -16,6 +16,7 @@ public class Coin implements Flippable {
   
   /** 
   * Two parameter constructor
+  * CANNOT BE INSTANTIATED BY ITSELF
   * @param v the coin value
   * @param n the coin type name
   */
@@ -24,7 +25,11 @@ public class Coin implements Flippable {
     this.name = n;
     this.toss(); //randomly set upside/downSide
   }
+  
+  //abstract method - not implemented here
+  public abstract String getBack();
 
+/*********** Rest is the same ******************/
   //get methods
   public double getValue() {
     return this.value; 
