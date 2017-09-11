@@ -6,11 +6,7 @@
 public class DollarCoin extends Coin {
 
   public DollarCoin(){
-    super(1.0,"dollar");
-  }
-    
-  public String getColor () {
-    return "gold";
+    super(1.0,"dollar", "gold");
   }
   
     //required by Coin abstract class

@@ -5,12 +5,11 @@ import java.util.Random;
 * @since 9/9/2017
 */
 
-public abstract class Coin implements Flippable, Money {
+public abstract class Coin extends Money implements Flippable, Comparable{
   //instance variables
-  private double value;
-  private String name;
-  private String color;
-  //added for flippable
+//   private int date;
+//   private String shape;
+//   //added for flippable
   private int upSide;
   private int downSide;
   
@@ -20,9 +19,10 @@ public abstract class Coin implements Flippable, Money {
   * @param v the coin value
   * @param n the coin type name
   */
-  public Coin (double v, String n) {
+  public Coin (double v, String n, String c) {
     this.value = v;
     this.name = n;
+    this.color = c;
     this.toss(); //randomly set upside/downSide
   }
   
@@ -30,10 +30,10 @@ public abstract class Coin implements Flippable, Money {
   public abstract String getBack();
 
 /*********** Rest is the same ******************/
-  //get methods
-  public double getValue() {
-    return this.value; 
-  }
+  //get methods get Value in Money now
+//   public double getValue() {
+//     return this.value; 
+//   }
   public String getName() {
     return this.name;
   }
@@ -41,7 +41,7 @@ public abstract class Coin implements Flippable, Money {
   //getColor method returns "Silver"
   //by default
   public String getColor() {
-    return "Silver";
+    return this.color;
   }
   
 
@@ -89,5 +89,24 @@ public abstract class Coin implements Flippable, Money {
   @Override
   public void setUpSide (int i) {
     upSide = i;
+  }
+  
+  //to string method
+  public String toString(){
+    return this.value + " cents";
+  }
+  
+  //compareTo method
+  @Override
+  public int compareTo(Coin c){
+    double diff;
+    int iDiff;
+    //have to call getValue for c because don't have access
+    diff = this.value - c.getValue();
+    
+    iDiff = (int)(diff*100);//return integer difference in cents
+    
+    return iDiff;
+ 
   }
 }

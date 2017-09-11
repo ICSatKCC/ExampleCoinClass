@@ -6,11 +6,7 @@
 public class Penny extends Coin {
 
   public Penny(){
-    super(.01,"penny");
-  }
-  
-  public String getColor () {
-    return "Copper";
+    super(.01,"penny", "copper");
   }
   
   //required by Coin abstract class
