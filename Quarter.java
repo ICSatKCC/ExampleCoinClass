@@ -6,7 +6,7 @@
 public class Quarter extends Coin {
 
   public Quarter(){
-    super(.25,"quarter");
+    super(.25,"quarter", "Silver");
   }
   
     //required by Coin abstract class

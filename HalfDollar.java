@@ -6,7 +6,7 @@
 public class HalfDollar extends Coin {
 
   public HalfDollar(){
-    super(.50,"halfdollar");
+    super(.50,"halfdollar", "Silver");
   }
   
     //required by Coin abstract class

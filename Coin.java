@@ -5,7 +5,7 @@ import java.util.Random;
 * @since 9/9/2017
 */
 
-public abstract class Coin extends Money implements Flippable, Comparable{
+public abstract class Coin extends Money implements Flippable, Comparable<Coin>{
   //instance variables
 //   private int date;
 //   private String shape;
@@ -97,7 +97,6 @@ public abstract class Coin extends Money implements Flippable, Comparable{
   }
   
   //compareTo method
-  @Override
   public int compareTo(Coin c){
     double diff;
     int iDiff;

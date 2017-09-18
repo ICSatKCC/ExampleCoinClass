@@ -6,6 +6,10 @@
 public class Nickel extends Coin {
 
   public Nickel(){
-    super(.05,"nickel");
+    super(.05,"nickel", "Silver");
+  }
+  //required by Coin abstract class
+  public String getBack(){
+    return "Monticello";
   }
 }
