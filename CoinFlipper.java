@@ -48,7 +48,7 @@ public class CoinFlipper{
   */
   public static Flippable doubleFlip(Flippable f1){
     int side = f1.getUpSide();
-    Coin c;
+    Coin c = new Penny();
     
     switch(side){
       case 0:
@@ -56,9 +56,6 @@ public class CoinFlipper{
         break;
       case 1:
         c = new Nickel();
-        break;
-      default:
-        c = new Coin(0.0, "some other coin");
         break;
     }
     return c;
