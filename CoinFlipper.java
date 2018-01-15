@@ -47,6 +47,8 @@ public class CoinFlipper{
   * @return a new COin object
   */
   public static Flippable doubleFlip(Flippable f1){
+    f1.flip();
+    f1.flip();
     int side = f1.getUpSide();
     Coin c;
     
