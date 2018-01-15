@@ -24,6 +24,8 @@ public class CoinFlipper{
       coinArr[0].toss();
       System.out.println(printUpSide(coinArr[0].getUpSide()));
     }
+    
+    Flippable f = doubleFlip(coinArr[0]);
    
   }//close main
   
