@@ -1,11 +1,15 @@
 /**
-* Nickel Coin Subclass
+* Nickel .05 cent value Coin Subclass.
 * @author Lisa Miller
-* @since 9/9/2017
+* @since 1/24/22
 */
 public class Nickel extends Coin {
 
-  public Nickel(){
-    super(.05,"nickel");
-  }
+  /**
+  * Constructor, needs no parameters.
+  * Sends default Nickel values
+  */
+   public Nickel() {
+      super(.05, "Nickel", "Thomas Jefferson", "Monticello");
+   }
 }

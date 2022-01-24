@@ -1,11 +1,15 @@
 /**
-* HalfDollar Coin Subclass
+* HalfDollar .50 value Coin Subclass.
 * @author Lisa Miller
-* @since 9/9/2017
+* @since 1/24/22
 */
 public class HalfDollar extends Coin {
 
-  public HalfDollar(){
-    super(.50,"halfdollar");
-  }
+   /**
+   * Constructor, needs no parameters.
+   * Sends default HalfDollar values
+   */
+   public HalfDollar() {
+      super(.50, "Half Dollar", "John F. Kennedy", "Presidential Coat of Arms");
+   }
 }

@@ -1,90 +1,80 @@
-import java.util.Random;
 /**
-* Flippable Coin super class.
+* Basic Coin super class.
 * @author Lisa Miller
-* @since 9/9/2017
+* @since 1/24/22
 */
 
-public class Coin implements Flippable {
+public class Coin {
    //instance variables
+   /** the Coin value. */
    private double value;
+   /** the name of the Coin type. */
    private String name;
-   private String color;
-   //added for flippable
-   private int upSide;
-   private int downSide;
+   /** the image on the front of the Coin. */
+   private String front;
+   /** the image on the back. */
+   private String back;
    
    /** 
-   * Two parameter constructor
-   * @param value the coin value
-   * @param name the coin type name
+   * Two parameter constructor.
+   * @param newValue the coin value
+   * @param newName the coin type name
    */
-   public Coin (double value, String name) {
-      this.value = value;
-      this.name = name;
-      this.toss(); //randomly set upside/downSide
+   public Coin(double newValue, String newName, String newFront, String newBack) {
+      this.value = newValue;
+      this.name = newName;
+      this.front = newFront;
+      this.back = newBack;
    }
 
    //get methods
+   /**
+   * Gets the value of this Coin.
+   * @return the value of the Coin.
+   */
    public double getValue() {
       return this.value; 
    }
+   
+   /**
+   * Gets the name of this Coin.
+   * @return the name of the Coin.
+   */
    public String getName() {
       return this.name;
    }
    
-   //getColor method returns "Silver"
-   //by default
+   /**
+   * Gets the color of this Coin.
+   * Always returns Silver as the default color.
+   * @return the color of the Coin, Silver.
+   */
    public String getColor() {
       return "Silver";
    }
    
-
    /**
-   * Switches value of upSide and downSide.
+   * Gets the description of the front image.
+   * @return the front of the Coin.
    */
-   @Override
-   public void flip() {
-      if (upSide == 0) {
-         upSide = 1;
-         downSide = 0;
-      } 
-      else {
-         upSide = 0;
-         downSide = 1;
-      }
+   public String getFront() {
+      return this.front;
    }
    
    /**
-   * Randomly sets upSide and corresponding downSide
+   * Gets the description of the back image.
+   * @return the back of the Coin.
    */
-   @Override	
-   public void toss() {
-      Random r = new Random();
-      upSide = r.nextInt(2);
-      if (upSide == 0){
-         downSide = 1;
-      } 
-      else { 
-         downSide = 0;
-      }
+   public String getBack() {
+      return this.back;
    }
    
    /**
-   * Returns the upSide
-   * @return the up facing side
+   * Sets the description of the back image.
+   * @param the back of the Coin.
    */
-   @Override
-   public int getUpSide () {
-      return upSide;
+   public void setBack(String newBack) {
+      this.back = newBack;
    }
-   
-   /**
-   * Sets the upSide
-   * @param i the new up facing side
-   */
-   @Override
-   public void setUpSide (int i) {
-      upSide = i;
-   }
+  
 }
