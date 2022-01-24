@@ -7,34 +7,49 @@ import java.util.Random;
 
 public class Coin implements Flippable {
    //instance variables
+   /** the Coin value. */
    private double value;
+   /** The Coin name. */
    private String name;
+   /** The coin color. */
    private String color;
    //added for flippable
+   /** The Coin side facing up. */
    private int upSide;
+   /** The Coin side facing down. */
    private int downSide;
    
    /** 
-   * Two parameter constructor
-   * @param value the coin value
-   * @param name the coin type name
+   * Two parameter constructor.
+   * @param newValue the coin value
+   * @param newName the coin type name
    */
-   public Coin (double value, String name) {
-      this.value = value;
-      this.name = name;
+   public Coin(double newValue, String newName) {
+      this.value = newValue;
+      this.name = newName;
       this.toss(); //randomly set upside/downSide
    }
 
    //get methods
+   /**
+   * Gets the value of this Coin.
+   * @return the value
+   */
    public double getValue() {
       return this.value; 
    }
+   /**
+   * Gets the name of this Coin.
+   * @return the name
+   */
    public String getName() {
       return this.name;
    }
    
-   //getColor method returns "Silver"
-   //by default
+   /**
+   * Gets the color of this Coin.
+   * @return "Silver by default
+   */
    public String getColor() {
       return "Silver";
    }
@@ -56,13 +71,13 @@ public class Coin implements Flippable {
    }
    
    /**
-   * Randomly sets upSide and corresponding downSide
+   * Randomly sets upSide and corresponding downSide.
    */
    @Override	
    public void toss() {
       Random r = new Random();
       upSide = r.nextInt(2);
-      if (upSide == 0){
+      if (upSide == 0) {
          downSide = 1;
       } 
       else { 
@@ -71,20 +86,20 @@ public class Coin implements Flippable {
    }
    
    /**
-   * Returns the upSide
+   * Returns the upSide.
    * @return the up facing side
    */
    @Override
-   public int getUpSide () {
+   public int getUpSide() {
       return upSide;
    }
    
    /**
-   * Sets the upSide
+   * Sets the upSide.
    * @param i the new up facing side
    */
    @Override
-   public void setUpSide (int i) {
+   public void setUpSide(int i) {
       upSide = i;
    }
 }
