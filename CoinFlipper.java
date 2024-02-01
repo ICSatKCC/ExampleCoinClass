@@ -1,17 +1,21 @@
 /**
-* Driver class for Flippable Coins
+* Driver class for Flippable Coins.
 * @author Lisa Miller
-* @since 9/9/2017
+* @since 1/28/24
 */
 
-public class CoinFlipper{
+public class CoinFlipper {
+   /** main method.
+   * @param args not used
+   */
   public static void main( String [] args){
     
     //array of coins can hold all subclasses
-    Coin[] coinArr = new Coin[2];  
+    Coin[] coinArr = new Coin[3];  
     
-    coinArr[0] = new Dime();
+    coinArr[0] = new DollarCoin();
     coinArr[1] = new Penny();
+    coinArr[2] = (Coin)doubleFlip(coinArr[0]); //call doubleFlip
     
     for (int i = 0; i < coinArr.length; i++){
       System.out.print("Coin type: " + coinArr[i].getName() + "\tValue: " + coinArr[i].getValue());
@@ -24,6 +28,12 @@ public class CoinFlipper{
       coinArr[0].toss();
       System.out.println(printUpSide(coinArr[0].getUpSide()));
     }
+    
+    for(int i = 0; i < coinArr.length; i++) {
+      System.out.println(coinArr[i]);
+    }
+    
+    
    
   }//close main
   
@@ -33,7 +43,7 @@ public class CoinFlipper{
   * @return the upSide String value
   */
   private static String printUpSide(int i) {
-    if (i == 0){
+    if (i == 1){
       return("Heads");
     }else { 
       return("Tails");
@@ -47,8 +57,10 @@ public class CoinFlipper{
   * @return a new COin object
   */
   public static Flippable doubleFlip(Flippable f1){
+    f1.flip();
+    f1.flip();
     int side = f1.getUpSide();
-    Coin c = new Penny();
+    Flippable c = new Quarter();
     
     switch(side){
       case 0:
